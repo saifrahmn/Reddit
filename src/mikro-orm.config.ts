@@ -1,9 +1,10 @@
 import { Post } from "../entities/Post";
 import { __prod__ } from "./constants";
-import { Options } from '@mikro-orm/core';
-import path from "path";
+import  { Options } from "@mikro-orm/core";
+import path from "path";    
 
 const config: Options = {
+    allowGlobalContext: true,
     migrations:{
         path: path.join(__dirname,'./migrations'),
         pathTs: undefined, 
