@@ -2,6 +2,7 @@ import { Post } from "../entities/Post";
 import { __prod__ } from "./constants";
 import  { Options } from "@mikro-orm/core";
 import path from "path";    
+import { User } from "../entities/User";
 
 const config: Options = {
     allowGlobalContext: true,
@@ -10,7 +11,7 @@ const config: Options = {
         pathTs: undefined, 
         glob: '!(*.d).{js,ts}'
     },
-        entities: [Post],
+        entities: [Post, User],
         dbName: 'lireddit',
         user: 'postgres',
         password: 'root',
