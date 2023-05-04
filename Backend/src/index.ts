@@ -3,6 +3,7 @@ import { __prod__ } from "./entities/constant";
 
 const main = async () =>{
     const orm= await MikroORM.init({
+        entities: [],
         dbName: 'reddit',
         type: 'postgresql',
         debug: !__prod__,
