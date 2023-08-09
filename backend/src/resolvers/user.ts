@@ -33,4 +33,12 @@ export class UserResolver {
         return user;
     }
 
+    @Mutation(() => Boolean)
+    async deleteUser(
+        @Arg("_id") _id: number,
+        @Ctx() { em }: MyContext
+    ) :Promise<Boolean>{
+        em.nativeDelete(User, {_id})
+        return true;
+    }
 }
